@@ -3,5 +3,13 @@
       "port" : 8080
     },
 
-    "uri" : "https://pokeapi.co/api/v2/pokemon/"
+    "uri" : "https://pokeapi.co/api/v2/pokemon/",
+    "db": {
+      "host": "localhost",
+      "port": 3306,
+      "database": "db_project_games",
+      "user": "root",
+      "password": "1234"
+    }
+
   }
