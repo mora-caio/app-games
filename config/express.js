@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const config = require("config");
 const consign = require("consign");
 const mysql = require("mysql");
+const connectionFactory = require("../DAO/connectionFactory")();
 
 module.exports = () => {
   const app = express();
@@ -14,13 +15,13 @@ module.exports = () => {
   app.use(bodyParser.json());
 
   //CONECTANDO BANCO DE DADOS
-  mysql.createConnection(config.get("db"), function (err) {
+  connectionFactory.connection().connect(function (err) {
     if (err) {
-      console.log(err);
+      return console.log(err);
     } else {
-      console.log("Database Connect !");
+      return console.log("Connect ! in: " + config.get("db.database"));
     }
-  })
+  });
 
   //ENDPOINT
   consign()

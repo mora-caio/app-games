@@ -2,8 +2,7 @@
     "server": {
       "port" : 8080
     },
-
-    "uri" : "https://pokeapi.co/api/v2/pokemon/",
+    
     "db": {
       "host": "localhost",
       "port": 3306,
